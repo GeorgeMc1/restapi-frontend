@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <h1>Hello There!</h1>
       <Form getUsers={getUsers} cookie={cookie}/>
-      <Login setter={setUser} getUsers={getUsers} cookie={cookie}/>
+      <Login setter={setUser} getUsers={getUsers} cookie={cookie} setCookie={setCookie} getCookie={getCookie}/>
       {user ?
         <>
           <Users users={users.users} getUsers={getUsers} cookie={cookie}/>

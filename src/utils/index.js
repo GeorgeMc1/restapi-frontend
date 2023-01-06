@@ -92,7 +92,6 @@ export const loginUser = async (username, password, setter) => {
         })
         const data = await response.json();
         const user = await readUser(data.token, data.username);
-        console.log(user);
         if (user.users.length === 1){
             setter(user.users[0]);
             writeCookie("jwt_token", data.token, 7);

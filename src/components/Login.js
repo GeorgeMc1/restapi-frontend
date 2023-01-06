@@ -2,13 +2,14 @@ import { useState } from "react";
 import { loginUser } from "../utils";
 import styled from "styled-components";
 
-export const Login = ({setter, getUsers, cookie}) => {
+export const Login = ({setter, getUsers, cookie, setCookie, getCookie}) => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
     const submitHandler = async (e) => {
         e.preventDefault();
         await loginUser(username, password, setter);
+        setCookie(getCookie("jwt_token"));
         if(cookie) getUsers(cookie);
     }
     return(
